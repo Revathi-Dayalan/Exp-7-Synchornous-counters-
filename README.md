@@ -46,43 +46,89 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+
+1.Set the input as clock.
+
+2.Register the output of 4 bit.
+
+3.Use Posedge on the input clock.
+
+4.For Up counter use AND and OR gates to declare the value of each bit.
+
+5.For Down counter use AND, OR and NOT gates to declare the value of each bit.
+
+6.End the module.
 
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:REVATHI D 
+RegisterNumber:212221240045
+```
+## UP COUNTER :
+```
+module up(clk,A);
+input clk;
+output reg [3:0]A;
+always@(posedge clk)
+begin
+A[3]=((A[2]&A[1])&A[0])^A[3];
+A[2]=(A[1]&A[0])^A[2];
+A[1]=(A[0]^A[1]);
+A[0]=1^A[0];
+end
+endmodule
+```
+## DOWN COUNTER :
 
-
-
-
+module down(clk,A);
+input clk;
+output reg [3:0]A;
+always @(posedge clk)
+begin
+A[3]=((~A[2])&(~A[1])&(~A[0]))^A[3];
+A[2]=((~A[1])&(~A[0]))^A[2];
+A[1]=(~A[0])^A[1];
+A[0]=1^A[0];
+end
+endmodule
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+## UP COUNTER :
 
+![D1](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/e401c74b-6869-4225-9f24-ae28bc303c74)
 
+## DOWN COUNTER :
 
-
-
-
+![D2](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/b4354749-7c2d-46a6-982f-0d0ae44b6d76)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+## UP COUNTER :
+
+![D3](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/52634218-ee45-46a1-b4cf-58b8f7b5131a)
+
+## DOWN COUNTER :
 
 
-
+![D4](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/c5b78266-6d15-45bf-8c34-32752d4aed6a)
 
 
 ### TRUTH TABLE 
+## UP COUNTER :
 
 
+![D5](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/96382e0d-6b60-4cbe-8a47-8821bf854526)
 
 
+## DOWN COUNTER :
+
+![D6](https://github.com/Revathi-Dayalan/Exp-7-Synchornous-counters-/assets/96000574/ec595f2d-075c-4bf7-b110-458a135ec64c)
 
 
 ### RESULTS 
+Thus the program has been executed successfully.
