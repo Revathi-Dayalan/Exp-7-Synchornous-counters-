@@ -1,7 +1,14 @@
-# Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### Exp-6-Synchornous-counters - up counter and down counter
+
+### AIM:
+To implement 4 bit up and down counters and validate  functionality.
+
+### HARDWARE REQUIRED: 
+– PC, Cyclone II , USB flasher
+
+### SOFTWARE REQUIRED:  
+Quartus prime
+
 ### THEORY 
 
 ## UP COUNTER 
@@ -45,6 +52,7 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
+
 ### Procedure
 
 1.Set the input as clock.
@@ -82,7 +90,7 @@ end
 endmodule
 ```
 ## DOWN COUNTER :
-
+```
 module down(clk,A);
 input clk;
 output reg [3:0]A;
@@ -94,7 +102,7 @@ A[1]=(~A[0])^A[1];
 A[0]=1^A[0];
 end
 endmodule
-
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
